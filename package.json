@@ -1,5 +1,5 @@
 {
-  "name": "my-turborepo",
+  "name": "Code Platform",
   "private": true,
   "scripts": {
     "build": "turbo run build",
