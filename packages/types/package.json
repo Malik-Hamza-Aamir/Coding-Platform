@@ -1,0 +1,24 @@
+{
+  "name": "@repo/types",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@repo/types": "file:",
+    "types": "file:",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.4",
+    "typescript": "^5.7.3"
+  },
+  "peerDependencies": {
+    "zod": "^3.24.2"
+  }
+}
