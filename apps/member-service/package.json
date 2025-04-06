@@ -1,0 +1,60 @@
+{
+  "name": "@coding-platform/member-service",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "targets": {
+      "build": {
+        "executor": "nx:run-commands",
+        "options": {
+          "command": "webpack-cli build",
+          "args": [
+            "node-env=production"
+          ]
+        },
+        "configurations": {
+          "development": {
+            "args": [
+              "node-env=development"
+            ]
+          }
+        }
+      },
+      "serve": {
+        "executor": "@nx/js:node",
+        "defaultConfiguration": "development",
+        "dependsOn": [
+          "build"
+        ],
+        "options": {
+          "buildTarget": "@coding-platform/member-service:build",
+          "runBuildTargetDependencies": false
+        },
+        "configurations": {
+          "development": {
+            "buildTarget": "@coding-platform/member-service:build:development"
+          },
+          "production": {
+            "buildTarget": "@coding-platform/member-service:build:production"
+          }
+        }
+      },
+      "test": {
+        "options": {
+          "passWithNoTests": true
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "@coding-platform/member-service": "file:",
+    "@nestjs/jwt": "^11.0.0",
+    "@prisma/client": "^6.5.0",
+    "bcrypt": "^5.1.1",
+    "class-validator": "^0.14.1"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "prisma": "^6.5.0"
+  }
+}

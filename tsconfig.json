@@ -2,5 +2,18 @@
   "extends": "./tsconfig.base.json",
   "compileOnSave": false,
   "files": [],
-  "references": []
+  "references": [
+    {
+      "path": "./apps/member-service"
+    },
+    {
+      "path": "./apps/problem-service"
+    },
+    {
+      "path": "./apps/execution-engine"
+    },
+    {
+      "path": "./libs/passport-auth"
+    }
+  ]
 }
